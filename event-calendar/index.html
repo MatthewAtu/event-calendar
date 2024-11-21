@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Calender</title>
+    <link rel="stylesheet" type="text/css" href ="Main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    
+</head>
+<body class="background">
+    <h1 id="Title"><b>Calendar</b></h1>
+    <div class="header">
+    <button class="navigate" onclick="previousMonth()"><img src="left-arrow.png" alt="left"></button>
+    <h1 id="month"></h1>
+    <button class="navigate" onclick="nextMonth()"><img src="right-arrow.png" alt="right"></button>
+    </div>
+    <div id="container">
+        <div>
+            <div id="calendar"> </div>
+        </div>   
+        <div class="popup" id="pop">
+            <div id="popup-inner">   
+                <h2>plan event</h2>
+                <div id="bookevent">
+                    <label for="event-title"> name: </label>
+                    <input type="text" id="name-input" name="event-title">
+                    <div id="starttime">start time:  
+                        <button class="timechangestart" id="startL" onClick="timeDown()"> <img class="timeset" src="left-arrow.png" alt="left"></button>
+                        <p id="srttime"></p>  
+                        <button class="timechangestart" id="startR" onclick="timeUp()"><img class="timeset" src="right-arrow.png" alt="right"></button>
+                    </div>
+                    <div id="endtime">end time:
+                        <button class="timechangeend" id="endL" onClick="timeDown2()"> <img class="timeset" src="left-arrow.png" alt="left"></button>
+                        <p id="ndtime"></p>
+                        <button class="timechangeend" id="endR" onclick="timeUp2()"><img class="timeset" src="right-arrow.png" alt="right"></button>
+                    </div>
+                </div>
+                <button id="bookbutton" onClick="handleBooking()"><b>book event</b></button>
+                <button id="close-popup"><b>close window</b></button>
+            </div>
+        </div> 
+        <div class="booked" id="book">
+            <div id="booked-inner">
+                <h2>booking details</h2>
+                <p id="outputname">name: </p>
+                <p id="bookedstart">start time: </p>
+                <p id="bookedend">end time: </p>
+                <button id="closebooked"><b>close window</b></button>
+                <button id="clearbooked"><b>clear</b></button>
+            </div>
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="Script.js"></script>
+</body>
